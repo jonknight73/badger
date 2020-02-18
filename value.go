@@ -35,8 +35,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/dgraph-io/badger/options"
-	"github.com/dgraph-io/badger/y"
+	"github.com/jonknight73/badger/options"
+	"github.com/jonknight73/badger/y"
 	"github.com/pkg/errors"
 	"golang.org/x/net/trace"
 )

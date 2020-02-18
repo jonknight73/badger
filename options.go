@@ -17,7 +17,7 @@
 package badger
 
 import (
-	"github.com/dgraph-io/badger/options"
+	"github.com/jonknight73/badger/options"
 )
 
 // Note: If you add a new option X make sure you also add a WithX method on Options.
@@ -63,6 +63,8 @@ type Options struct {
 	NumCompactors     int
 	CompactL0OnClose  bool
 	LogRotatesToFlush int32
+
+	BypassLockGuard bool
 
 	BackupKeyFn    func([]byte) ([]byte, error)
 	BackupValueFn  func([]byte) ([]byte, error)

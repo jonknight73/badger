@@ -28,9 +28,9 @@ import (
 	humanize "github.com/dustin/go-humanize"
 	"github.com/spf13/cobra"
 
-	"github.com/dgraph-io/badger"
-	"github.com/dgraph-io/badger/pb"
-	"github.com/dgraph-io/badger/y"
+	"github.com/jonknight73/badger"
+	"github.com/jonknight73/badger/pb"
+	"github.com/jonknight73/badger/y"
 )
 
 var writeBenchCmd = &cobra.Command{

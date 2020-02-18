@@ -23,8 +23,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/dgraph-io/badger/table"
-	"github.com/dgraph-io/badger/y"
+	"github.com/jonknight73/badger/table"
+	"github.com/jonknight73/badger/y"
 	"github.com/pkg/errors"
 )
 
