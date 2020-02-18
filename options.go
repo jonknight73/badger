@@ -115,7 +115,7 @@ func DefaultOptions(path string) Options {
 		Truncate:           false,
 		Logger:             defaultLogger,
 		LogRotatesToFlush:  2,
-		BypassLockGuard:    false,
+		BypassLockGuard:    true,
 	}
 }
 
