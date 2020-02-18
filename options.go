@@ -115,6 +115,7 @@ func DefaultOptions(path string) Options {
 		Truncate:           false,
 		Logger:             defaultLogger,
 		LogRotatesToFlush:  2,
+		BypassLockGuard:    false,
 	}
 }
 
@@ -165,6 +166,16 @@ func (opt Options) WithValueDir(val string) Options {
 // The default value of SyncWrites is true.
 func (opt Options) WithSyncWrites(val bool) Options {
 	opt.SyncWrites = val
+	return opt
+}
+
+// WithBypassLockGuard returns a new Options value with BypassLockGuard set to the given value.
+//
+// When BypassLockGuard is true Badger does not try to acquire a directory lock
+//
+// The default value of SyncWrites is false.
+func (opt Options) WithBypassLockGuard(val bool) Options {
+	opt.BypassLockGuard = val
 	return opt
 }
 
