@@ -78,6 +78,8 @@ type Options struct {
 	LogRotatesToFlush    int32
 	ZSTDCompressionLevel int
 
+	BypassLockGuard bool
+
 	// When set, checksum will be validated for each entry read from the value log file.
 	VerifyValueChecksum bool
 
