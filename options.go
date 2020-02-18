@@ -19,9 +19,9 @@ package badger
 import (
 	"time"
 
-	"github.com/dgraph-io/badger/v2/options"
-	"github.com/dgraph-io/badger/v2/table"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/options"
+	"github.com/jonknight73/badger/v2/table"
+	"github.com/jonknight73/badger/v2/y"
 )
 
 // Note: If you add a new option X make sure you also add a WithX method on Options.
@@ -139,7 +139,7 @@ func DefaultOptions(path string) Options {
 		// Level: 3  Ratio: 2.72 Time:  24112 n/s
 		// Level: 10 Ratio: 2.95 Time:  75655 n/s
 		// Level: 15 Ratio: 4.38 Time: 239042 n/s
-		// See https://github.com/dgraph-io/badger/pull/1111#issue-338120757
+		// See https://github.com/jonknight73/badger/pull/1111#issue-338120757
 		ZSTDCompressionLevel: 15,
 		// Nothing to read/write value log using standard File I/O
 		// MemoryMap to mmap() the value log files

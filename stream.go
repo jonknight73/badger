@@ -24,8 +24,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/dgraph-io/badger/v2/pb"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/pb"
+	"github.com/jonknight73/badger/v2/y"
 	humanize "github.com/dustin/go-humanize"
 	"github.com/golang/protobuf/proto"
 )

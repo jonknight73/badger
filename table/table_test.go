@@ -29,8 +29,8 @@ import (
 	"time"
 
 	"github.com/cespare/xxhash"
-	"github.com/dgraph-io/badger/v2/options"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/options"
+	"github.com/jonknight73/badger/v2/y"
 	"github.com/dgraph-io/ristretto"
 	"github.com/stretchr/testify/require"
 )

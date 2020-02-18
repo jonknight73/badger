@@ -26,9 +26,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dgraph-io/badger/v2/options"
-	"github.com/dgraph-io/badger/v2/table"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/options"
+	"github.com/jonknight73/badger/v2/table"
+	"github.com/jonknight73/badger/v2/y"
 	"github.com/stretchr/testify/require"
 )
 
@@ -60,7 +60,7 @@ func TestPickTables(t *testing.T) {
 	within([]byte("abc"), []byte("abb123"), []byte("ad"))
 	within([]byte("abc"), []byte("abc123"), []byte("abd234"))
 	within([]byte("abc"), []byte("abc123"), []byte("abc456"))
-	// Regression test for https://github.com/dgraph-io/badger/issues/992
+	// Regression test for https://github.com/jonknight73/badger/issues/992
 	within([]byte{0, 0, 1}, []byte{0}, []byte{0, 0, 1})
 
 	outside("abd", "abe", "ad")
@@ -205,7 +205,7 @@ func TestIteratePrefix(t *testing.T) {
 // Benchmark with opt.Prefix set ===
 // goos: linux
 // goarch: amd64
-// pkg: github.com/dgraph-io/badger
+// pkg: github.com/jonknight73/badger
 // BenchmarkIteratePrefixSingleKey/Key_lookups-4         	   10000	    365539 ns/op
 // --- BENCH: BenchmarkIteratePrefixSingleKey/Key_lookups-4
 // 	iterator_test.go:147: Inner b.N: 1
@@ -215,12 +215,12 @@ func TestIteratePrefix(t *testing.T) {
 // 	iterator_test.go:143: LSM files: 79
 // 	iterator_test.go:145: Outer b.N: 1
 // PASS
-// ok  	github.com/dgraph-io/badger	41.586s
+// ok  	github.com/jonknight73/badger	41.586s
 //
 // Benchmark with NO opt.Prefix set ===
 // goos: linux
 // goarch: amd64
-// pkg: github.com/dgraph-io/badger
+// pkg: github.com/jonknight73/badger
 // BenchmarkIteratePrefixSingleKey/Key_lookups-4         	   10000	    460924 ns/op
 // --- BENCH: BenchmarkIteratePrefixSingleKey/Key_lookups-4
 // 	iterator_test.go:147: Inner b.N: 1
@@ -230,7 +230,7 @@ func TestIteratePrefix(t *testing.T) {
 // 	iterator_test.go:143: LSM files: 83
 // 	iterator_test.go:145: Outer b.N: 1
 // PASS
-// ok  	github.com/dgraph-io/badger	41.836s
+// ok  	github.com/jonknight73/badger	41.836s
 //
 // Only my laptop there's a 20% improvement in latency with ~80 files.
 func BenchmarkIteratePrefixSingleKey(b *testing.B) {

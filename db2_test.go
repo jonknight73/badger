@@ -30,10 +30,10 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/dgraph-io/badger/v2/options"
-	"github.com/dgraph-io/badger/v2/pb"
-	"github.com/dgraph-io/badger/v2/table"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/options"
+	"github.com/jonknight73/badger/v2/pb"
+	"github.com/jonknight73/badger/v2/table"
+	"github.com/jonknight73/badger/v2/y"
 	"github.com/stretchr/testify/require"
 )
 
@@ -356,7 +356,7 @@ func BenchmarkDBOpen(b *testing.B) {
 	}
 }
 
-// Regression test for https://github.com/dgraph-io/badger/issues/830
+// Regression test for https://github.com/jonknight73/badger/issues/830
 func TestDiscardMapTooBig(t *testing.T) {
 	createDiscardStats := func() map[uint32]int64 {
 		stat := map[uint32]int64{}
@@ -675,7 +675,7 @@ func TestL0GCBug(t *testing.T) {
 	require.NoError(t, db2.Close())
 }
 
-// Regression test for https://github.com/dgraph-io/badger/issues/1126
+// Regression test for https://github.com/jonknight73/badger/issues/1126
 //
 // The test has 3 steps
 // Step 1 - Create badger data. It is necessary that the value size is

@@ -19,6 +19,6 @@ done
 
 echo "Running test with vlog_mmap false"
 # Another round of tests after turning off mmap
-go test -v -vlog_mmap=false github.com/dgraph-io/badger
+go test -v -vlog_mmap=false github.com/jonknight73/badger
 
 popd &> /dev/null

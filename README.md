@@ -1,4 +1,4 @@
-# BadgerDB [![GoDoc](https://godoc.org/github.com/dgraph-io/badger?status.svg)](https://godoc.org/github.com/dgraph-io/badger) [![Go Report Card](https://goreportcard.com/badge/github.com/dgraph-io/badger)](https://goreportcard.com/report/github.com/dgraph-io/badger) [![Sourcegraph](https://sourcegraph.com/github.com/dgraph-io/badger/-/badge.svg)](https://sourcegraph.com/github.com/dgraph-io/badger?badge) [![Build Status](https://teamcity.dgraph.io/guestAuth/app/rest/builds/buildType:(id:Badger_UnitTests)/statusIcon.svg)](https://teamcity.dgraph.io/viewLog.html?buildTypeId=Badger_UnitTests&buildId=lastFinished&guest=1) ![Appveyor](https://ci.appveyor.com/api/projects/status/github/dgraph-io/badger?branch=master&svg=true) [![Coverage Status](https://coveralls.io/repos/github/dgraph-io/badger/badge.svg?branch=master)](https://coveralls.io/github/dgraph-io/badger?branch=master)
+# BadgerDB [![GoDoc](https://godoc.org/github.com/jonknight73/badger?status.svg)](https://godoc.org/github.com/jonknight73/badger) [![Go Report Card](https://goreportcard.com/badge/github.com/jonknight73/badger)](https://goreportcard.com/report/github.com/jonknight73/badger) [![Sourcegraph](https://sourcegraph.com/github.com/jonknight73/badger/-/badge.svg)](https://sourcegraph.com/github.com/jonknight73/badger?badge) [![Build Status](https://teamcity.dgraph.io/guestAuth/app/rest/builds/buildType:(id:Badger_UnitTests)/statusIcon.svg)](https://teamcity.dgraph.io/viewLog.html?buildTypeId=Badger_UnitTests&buildId=lastFinished&guest=1) ![Appveyor](https://ci.appveyor.com/api/projects/status/github/dgraph-io/badger?branch=master&svg=true) [![Coverage Status](https://coveralls.io/repos/github/dgraph-io/badger/badge.svg?branch=master)](https://coveralls.io/github/dgraph-io/badger?branch=master)
 
 ![Badger mascot](images/diggy-shadow.png)
 
@@ -24,7 +24,7 @@ be compatible with all of the v1.x. The [Changelog] is kept fairly up-to-date.
 
 For more details on our version naming schema please read [Choosing a version](#choosing-a-version).
 
-[Changelog]:https://github.com/dgraph-io/badger/blob/master/CHANGELOG.md
+[Changelog]:https://github.com/jonknight73/badger/blob/master/CHANGELOG.md
 
 ## Table of Contents
  * [Getting Started](#getting-started)
@@ -62,13 +62,13 @@ For more details on our version naming schema please read [Choosing a version](#
 To start using Badger, install Go 1.11 or above and run `go get`:
 
 ```sh
-$ go get github.com/dgraph-io/badger/...
+$ go get github.com/jonknight73/badger/...
 ```
 
 This will retrieve the library and install the `badger` command line
 utility into your `$GOBIN` path.
 
-##### Note: Badger does not directly use CGO but it relies on https://github.com/DataDog/zstd for compression and it requires gcc/cgo. If you wish to use badger without gcc/cgo, you can run `CGO_ENABLED=0 go get github.com/dgraph-io/badger/...` which will download badger without the support for ZSTD compression algorithm.
+##### Note: Badger does not directly use CGO but it relies on https://github.com/DataDog/zstd for compression and it requires gcc/cgo. If you wish to use badger without gcc/cgo, you can run `CGO_ENABLED=0 go get github.com/jonknight73/badger/...` which will download badger without the support for ZSTD compression algorithm.
 
 #### Choosing a version
 
@@ -106,7 +106,7 @@ package main
 import (
 	"log"
 
-	badger "github.com/dgraph-io/badger"
+	badger "github.com/jonknight73/badger"
 )
 
 func main() {
@@ -684,7 +684,7 @@ These metrics can then be collected by a system like [Prometheus], to get
 better visibility into what Badger is doing.
 
 [expvar]: https://golang.org/pkg/expvar/
-[metrics]: https://github.com/dgraph-io/badger/blob/master/y/metrics.go
+[metrics]: https://github.com/jonknight73/badger/blob/master/y/metrics.go
 [Prometheus]: https://prometheus.io/
 
 ## Resources
@@ -741,7 +741,7 @@ benchmarking code, and the detailed logs for the benchmarks can be found in the
 [badger-bench] repo. More explanation, including graphs can be found the blog posts (linked
 above).
 
-[badger-bench]: https://github.com/dgraph-io/badger-bench
+[badger-bench]: https://github.com/jonknight73/badger-bench
 
 ## Other Projects Using Badger
 Below is a list of known projects that use Badger:
@@ -792,8 +792,8 @@ acquire read locks over the value log files to avoid value log GC removing the
 file from underneath. As a side effect, this also blocks a new value log GC
 file from being created, when the value log file boundary is hit.
 
-Please see Github issues [#293](https://github.com/dgraph-io/badger/issues/293)
-and [#315](https://github.com/dgraph-io/badger/issues/315).
+Please see Github issues [#293](https://github.com/jonknight73/badger/issues/293)
+and [#315](https://github.com/jonknight73/badger/issues/315).
 
 There are multiple workarounds during iteration:
 
@@ -839,7 +839,7 @@ the database, you'll see these writes on disk.
 
 ### Reverse iteration doesn't give me the right results.
 
-Just like forward iteration goes to the first key which is equal or greater than the SEEK key, reverse iteration goes to the first key which is equal or lesser than the SEEK key. Therefore, SEEK key would not be part of the results. You can typically add a `0xff` byte as a suffix to the SEEK key to include it in the results. See the following issues: [#436](https://github.com/dgraph-io/badger/issues/436) and [#347](https://github.com/dgraph-io/badger/issues/347).
+Just like forward iteration goes to the first key which is equal or greater than the SEEK key, reverse iteration goes to the first key which is equal or lesser than the SEEK key. Therefore, SEEK key would not be part of the results. You can typically add a `0xff` byte as a suffix to the SEEK key to include it in the results. See the following issues: [#436](https://github.com/jonknight73/badger/issues/436) and [#347](https://github.com/jonknight73/badger/issues/347).
 
 ### Which instances should I use for Badger?
 
@@ -879,7 +879,7 @@ Badger data can be migrated from version X of badger to version Y of badger by f
 listed below.
 Assume you were on badger v1.6.0 and you wish to migrate to v2.0.0 version.
 1. Install badger version v1.6.0
-    - `cd $GOPATH/src/github.com/dgraph-io/badger`
+    - `cd $GOPATH/src/github.com/jonknight73/badger`
     - `git checkout v1.6.0`
     - `cd badger && go install`
 
@@ -887,7 +887,7 @@ Assume you were on badger v1.6.0 and you wish to migrate to v2.0.0 version.
 2. Create Backup
     - `badger backup --dir path/to/badger/directory -f badger.backup`
 3. Install badger version v2.0.0
-    - `cd $GOPATH/src/github.com/dgraph-io/badger`
+    - `cd $GOPATH/src/github.com/jonknight73/badger`
     - `git checkout v2.0.0`
     - `cd badger && go install`
 
@@ -909,7 +909,7 @@ zstd compression and the library requires `gcc/cgo`. You can build badger withou
 
 ## Contact
 - Please use [discuss.dgraph.io](https://discuss.dgraph.io) for questions, feature requests and discussions.
-- Please use [Github issue tracker](https://github.com/dgraph-io/badger/issues) for filing bugs or feature requests.
+- Please use [Github issue tracker](https://github.com/jonknight73/badger/issues) for filing bugs or feature requests.
 - Join [![Slack Status](http://slack.dgraph.io/badge.svg)](http://slack.dgraph.io).
 - Follow us on Twitter [@dgraphlabs](https://twitter.com/dgraphlabs).
 

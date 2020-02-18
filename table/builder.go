@@ -27,9 +27,9 @@ import (
 	"github.com/golang/snappy"
 	"github.com/pkg/errors"
 
-	"github.com/dgraph-io/badger/v2/options"
-	"github.com/dgraph-io/badger/v2/pb"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/options"
+	"github.com/jonknight73/badger/v2/pb"
+	"github.com/jonknight73/badger/v2/y"
 	"github.com/dgraph-io/ristretto/z"
 )
 
@@ -56,8 +56,8 @@ func (h header) Encode() []byte {
 // Decode decodes the header.
 func (h *header) Decode(buf []byte) {
 	// Copy over data from buf into h. Using *h=unsafe.pointer(...) leads to
-	// pointer alignment issues. See https://github.com/dgraph-io/badger/issues/1096
-	// and comment https://github.com/dgraph-io/badger/pull/1097#pullrequestreview-307361714
+	// pointer alignment issues. See https://github.com/jonknight73/badger/issues/1096
+	// and comment https://github.com/jonknight73/badger/pull/1097#pullrequestreview-307361714
 	copy(((*[headerSize]byte)(unsafe.Pointer(h))[:]), buf[:headerSize])
 }
 

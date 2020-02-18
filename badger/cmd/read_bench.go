@@ -27,10 +27,10 @@ import (
 	humanize "github.com/dustin/go-humanize"
 	"github.com/spf13/cobra"
 
-	"github.com/dgraph-io/badger/v2"
-	"github.com/dgraph-io/badger/v2/options"
-	"github.com/dgraph-io/badger/v2/pb"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2"
+	"github.com/jonknight73/badger/v2/options"
+	"github.com/jonknight73/badger/v2/pb"
+	"github.com/jonknight73/badger/v2/y"
 )
 
 var readBenchCmd = &cobra.Command{

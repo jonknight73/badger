@@ -23,8 +23,8 @@ import (
 
 	"github.com/dgryski/go-farm"
 
-	"github.com/dgraph-io/badger/v2/table"
-	"github.com/dgraph-io/badger/v2/y"
+	"github.com/jonknight73/badger/v2/table"
+	"github.com/jonknight73/badger/v2/y"
 	"github.com/pkg/errors"
 )
 
